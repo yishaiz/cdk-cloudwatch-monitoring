@@ -1,6 +1,7 @@
 import json
 import urllib3
-from services.secret import url  # Import the URL from secret.py
+# from services.secret import url  # Import the URL from secret.py
+from secret import url  # Import the URL from secret.py
 
 http = urllib3.PoolManager()
 
