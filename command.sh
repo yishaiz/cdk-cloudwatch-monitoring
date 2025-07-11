@@ -1,0 +1,1 @@
+aws cloudwatch put-metric-data --namespace YyCustom –metric-name custom-error --value 1
