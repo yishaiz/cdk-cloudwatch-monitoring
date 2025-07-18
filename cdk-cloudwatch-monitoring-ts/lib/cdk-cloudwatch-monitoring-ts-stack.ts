@@ -11,7 +11,7 @@ export class CdkCloudwatchMonitoringTsStack extends cdk.Stack {
     const webHookLambda = new NodeJsFunction(this, 'webHookLambda', {
         runtime:Runtime.NODEJS_18_X,
         handler: 'handler',
-        entry: (join(__dirname, '..', 'services', 'handler.ts'))
+        entry: (Join(__dirname, '..', 'services', 'handler.ts'))
     })
   }
 }
