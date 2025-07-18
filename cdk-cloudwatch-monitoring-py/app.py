@@ -26,3 +26,4 @@ CdkCloudwatchMonitoringPyStack(app, "CdkCloudwatchMonitoringPyStack",
     )
 
 app.synth()
+
