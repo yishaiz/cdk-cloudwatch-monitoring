@@ -30,7 +30,7 @@ class CdkCloudwatchMonitoringPyStack(Stack):
         )
 
         alarm_topic.add_subscription(
-            aws_sns_subscriptions.LabdaSubscription(web_hook_lambda)
+            aws_sns_subscriptions.LambdaSubscription(web_hook_lambda)
         )
 
         alarm = aws_cloudwatch.Alarm(
