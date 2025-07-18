@@ -1,16 +1,17 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import { Runtime } from 'aws-cdk-lib/aws-lambda';
+import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
+import { Join } from 'path';
 
 export class CdkCloudwatchMonitoringTsStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // The code that defines your stack goes here
-
-    // example resource
-    // const queue = new sqs.Queue(this, 'CdkCloudwatchMonitoringTsQueue', {
-    //   visibilityTimeout: cdk.Duration.seconds(300)
-    // });
+    const webHookLambda = new NodeJsFunction(this, 'webHookLambda', {
+        runtime:Runtime.NODEJS_18_X,
+        handler: 'handler',
+        entry: (join(__dirname, '..', 'services', 'handler.ts'))
+    })
   }
 }
