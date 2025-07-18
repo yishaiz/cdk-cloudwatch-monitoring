@@ -46,7 +46,7 @@ export class CdkCloudwatchMonitoringTsStack extends cdk.Stack {
 
     alaramTopic.addSubscription(new LambdaSubscription(webHookLambda));
 
-    const sampleApiAlaram = new Alarm(this, 'TS-ApiAlarm', {
+    const sampleApiAlaram = new Alarm(this, 'TSApiAlarm', {
       metric: new Metric({
         metricName: 'custom-error',
         namespace: 'Custom',
