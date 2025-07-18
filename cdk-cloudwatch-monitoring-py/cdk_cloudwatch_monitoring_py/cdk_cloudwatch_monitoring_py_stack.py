@@ -39,7 +39,7 @@ class CdkCloudwatchMonitoringPyStack(Stack):
                 metric_name="custom-error",
                 namespace="Custom",
                 period=Duration.minutes(1),
-                statistics="Sum"
+                statistic="Sum"
             ),
             evaluation_period=1,
             threshold=100
