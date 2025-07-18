@@ -54,7 +54,7 @@ export class CdkCloudwatchMonitoringTsStack extends cdk.Stack {
         statistic: 'Sum',
       }),
       evaluationPeriods: 1,
-      threshold: 1,
+      threshold: 100,
     });
 
     const topicAction = new SnsAction(alaramTopic);
