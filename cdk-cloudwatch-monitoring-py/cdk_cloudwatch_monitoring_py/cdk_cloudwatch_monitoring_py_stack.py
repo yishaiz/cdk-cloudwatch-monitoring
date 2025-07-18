@@ -41,7 +41,7 @@ class CdkCloudwatchMonitoringPyStack(Stack):
                 period=Duration.minutes(1),
                 statistic="Sum"
             ),
-            evaluation_period=1,
+            evaluation_periods=1,
             threshold=100
         )
 
