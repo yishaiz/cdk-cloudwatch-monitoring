@@ -34,7 +34,7 @@ export class CdkCloudwatchMonitoringTsStack extends cdk.Stack {
 
     const alaramTopic = new Topic(this, 'TSAlarmTopic', {
       displayName: 'TS Alarm Topic',
-      topicName: 'TS Alarm Topic',
+      topicName: 'TS-Alarm-Topic',
     });
 
     // alaramTopic.addSubscription({
