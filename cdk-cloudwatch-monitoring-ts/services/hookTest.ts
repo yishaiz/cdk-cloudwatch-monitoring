@@ -1,4 +1,5 @@
-import { handler } from './hook';
+// import { handler } from './hook';
+import { handler } from './handler';
 
 handler({
   Records: [
