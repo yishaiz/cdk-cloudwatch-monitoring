@@ -1,11 +1,10 @@
 from aws_cdk import (
     Stack,
-    aws_la,
     aws_lambda,
     aws_sns,
-    aws_sns_subscription,
+    aws_sns_subscriptions,
     aws_cloudwatch,
-    aws_cloudwatch_action,
+    aws_cloudwatch_actions,
     Duration
 )
 from constructs import Construct
@@ -31,7 +30,7 @@ class CdkCloudwatchMonitoringPyStack(Stack):
         )
 
         alarm_topic.add_subscription(
-            aws_sns_subscription.LabdaSubscription(web_hook_lambda)
+            aws_sns_subscriptions.LabdaSubscription(web_hook_lambda)
         )
 
         alarm = aws_cloudwatch.Alarm(
@@ -46,7 +45,7 @@ class CdkCloudwatchMonitoringPyStack(Stack):
             threshold=100
         )
 
-        topic_action = aws_cloudwatch_action.SnsAction(alarm_topic)
+        topic_action = aws_cloudwatch_actions.SnsAction(alarm_topic)
         alarm.add_alarm_action(topic_action)
         alarm.add_ok_action(topic_action)
 
