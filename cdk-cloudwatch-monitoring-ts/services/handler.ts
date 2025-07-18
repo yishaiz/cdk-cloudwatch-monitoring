@@ -1,3 +1,5 @@
+// this is a clone of hook.ts
+
 import { SNSEvent } from 'aws-lambda';
 
 import { url as webhookUrl } from './secret';
